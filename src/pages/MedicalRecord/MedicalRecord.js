@@ -445,7 +445,7 @@ let userbookedarraynew2 = (usersArray.myPrescription).filter((element,index) => 
 <div className='doc-table mt-3 table-responsive d-flex flex-column align-items-center'>
      <h1 className={filteredEgyId2.length ? "d-none" : "d-block"}>   لا توجد روشتة </h1>  
     <h1 className={filteredEgyId2.length ? "d-block" : "d-none"}>  روشتة المريض  </h1>
-   {filteredEgyId2 && <input type='search' placeholder='ابحث عن اسم الدواء...' className='search-medicine my-2 ' value={search} onChange={(e) => setsearch(e.target.value) } />} 
+   {filteredEgyId2 ? <input type='search' placeholder='ابحث عن اسم الدواء...' className='search-medicine my-2 ' value={search} onChange={(e) => setsearch(e.target.value) } />  : ''} 
 
 
 
@@ -459,7 +459,7 @@ let userbookedarraynew2 = (usersArray.myPrescription).filter((element,index) => 
 
 
 {/* <div className='saved-pres-background w-100'> */}
-{filteredEgyId2 &&
+{filteredEgyId2 ?
   <Swiper
    onSwiper={setSwiperRef}
    slidesPerView={3}
@@ -564,6 +564,8 @@ let userbookedarraynew2 = (usersArray.myPrescription).filter((element,index) => 
 
   ))}
   </Swiper>
+  :
+  ''
 }
 {/* </div> */}
 
