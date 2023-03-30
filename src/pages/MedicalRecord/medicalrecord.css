@@ -311,12 +311,12 @@ border-bottom: 4px solid blue;
 
 
 
-  .swiper {
+  .doc-table .swiper {
     width: 100%;
     height: 100%;
   }
   
-  .swiper-slide {
+  .doc-table .swiper-slide {
     width: 400px !important;
     /* margin-left: 80px !important; */
 text-align:right;
