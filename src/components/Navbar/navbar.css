@@ -1,0 +1,225 @@
+.main-nav{
+    box-shadow: 0px 1px 9px 0px #af7b7b33;
+    position: relative;
+    }
+
+
+
+.available-dep{
+
+color: black !important;
+
+}
+
+
+
+
+
+
+
+
+.navbar .logo img{
+    width: 200px;
+}
+.navbar{
+    flex-wrap: wrap;
+}
+.svgicon{
+    width: 15px;
+    margin-left: 5px;
+}
+.nav-options p{
+    align-self: flex-end;
+    cursor: pointer;
+}
+.navbar-list{
+    padding: 0;
+        margin: 0;
+       
+}
+.navbar-list li{
+    font-size: 14px;
+    cursor: pointer;
+    padding: 20px;
+}
+.navbar-list li:not(:last-child){
+    margin-left: 30px;
+}
+.navbar-list li:hover {
+    color: blueviolet;
+}
+.navbar-list li:hover .svgicon {
+    fill: blueviolet;
+}
+
+@media(max-width:991px){
+
+    .second-navbar-scetion .burger{
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+        transform: translateY(0);
+        transition: transform 0.5s ease-in;
+    }
+
+
+}
+
+.second-navbar-scetion .burger:hover{
+    transform: translateY(-5px);
+
+}
+
+
+
+@media (max-width:500px) {
+    .navbar .logo img {
+            width: 100px;
+        }
+                .second-navbar-scetion .burger{
+                    width: 40px;
+                        height: 40px;
+                }
+                                .nav-options p{
+                                    display: none;
+                                }
+ .main-nav::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    top: 75px;
+    left: 0;
+    position: absolute;
+}
+
+}
+                   
+
+.signin-form{
+    font-size: 14px;
+}
+.registernow:hover{
+text-decoration: underline;
+}
+
+@media (max-width:1300px) and (min-width:992px) {
+    
+ul.navbar-list{
+    display: flex !important;
+        position: absolute;
+        bottom: -41px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: white;
+        z-index: 10;
+        align-items: center !important;
+        justify-content: space-evenly !important;
+        /* padding: 20px; */
+        border-radius: 10px;
+        border: 1px solid black;
+}
+
+
+}
+@media (max-width:770px) {
+    
+.logo{
+width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+}
+@media (min-width:500px) and (max-width:770px) {
+    
+
+.main-nav::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    top: 120px;
+    left: 0;
+    position: absolute;
+}
+
+}
+@media (max-width:290px) {
+    .hala{
+        font-size: 9px !important;
+    }
+.signin-form {
+        font-size: 8px;
+    }
+.main-nav::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    top: 70px;
+    left: 0;
+    position: absolute;
+}
+
+}
+
+.patiens-guests-menu{
+     border-radius: 5px;
+        flex-direction: column;
+        padding: 5px;
+        position: absolute;
+        top: -2000px;
+        left: 50%;
+        width: 150%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        display: flex;
+    /* display: none; */
+            background-color: #fff;
+        border: 1px solid #ccc;
+        transition: all 0.3s;
+}
+
+
+
+
+.patiens-guests-menu a{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+.patiens-guests-menu p {
+    text-align: center;
+    color: black;
+    transition: all 0.3s ;
+}
+
+.patiens-guests-menu p:hover{
+background-color: #ccc;
+
+}
+
+
+li.position-relative:hover .patiens-guests-menu {
+    top: 60px;
+    
+}
+a{
+    text-decoration: none !important;
+    
+}
+.main{
+    color: black;
+}

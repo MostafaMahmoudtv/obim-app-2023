@@ -1,0 +1,88 @@
+.home-main{
+    height: calc(100vh - 172.43px);
+    background-image: url('../../Assets/flat-lay-health-still-life-arrangement-with-copy-space.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+    position: relative;
+    filter: blur(2);
+}
+.home-main::before{
+    content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.126);
+}
+.trust-title{
+    align-self: flex-start;
+    font-size: 70px;
+        font-family: -webkit-body;
+        font-weight: bolder;
+        position: relative;
+        z-index: 2;
+}
+/* .bookingform */
+
+
+.appointment{
+    position: relative;
+    z-index: 2;
+}
+
+.appointment input ,.appointment select {
+    background-color: #fff;
+    border: none;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.appointment input:focus ,
+.appointment select:focus{
+    border: none;
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.appointment label{
+    margin-bottom: 15px;
+}
+.appointment button{
+    width: 100%;
+    height: 50px;
+    max-width: 100%;
+    padding: 10px;
+    color: #fff;
+    background-color: green;
+    transition: 0.3s ;
+}
+
+.appointment button:hover{
+    border: 3px solid #fff;
+}
+
+@media (max-width:992px) {
+.home-main{
+    height: fit-content;
+    padding: 20px;
+    color: white;
+}
+}
+@media (max-width:490px) {
+.trust-title{
+    font-size: 50px;
+}
+}

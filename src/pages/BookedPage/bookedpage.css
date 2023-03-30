@@ -1,0 +1,100 @@
+tr.doc{
+    background-color: blueviolet;
+    color: white;
+}
+th.doc{
+    background-color: #008000ba;
+    color: white;
+}
+
+.doc-table{
+    width: 100%;
+    max-width: 100%;
+}
+
+.doc ~ td{
+    background-color: #edd5d580;;
+}
+.doc ~ td:hover{
+    background-color: rgba(228, 11, 11, 0.799);
+    color: white;
+}
+.idbooked {
+    align-self: flex-start;
+    width: 100%;
+}
+.idbooked h1{
+   margin-bottom: 20px;
+}
+.idbooked .identity{
+   background-color: #1b38e6;
+   border-radius: 15px;
+   padding: 20px 30px 60px 50px;
+   color: white;
+    width: 70%;
+ min-width: fit-content;
+        max-width: 100%;
+   
+}
+.idbooked .identity label {
+  margin-bottom: 10px;
+   font-weight: bold;
+}
+.idbooked .identity input {
+  border-radius: 5px;
+    width: 50%;
+        font-size: 25px;
+        letter-spacing: 5px;
+        padding:5px 20px;
+        outline: none;
+            border: none;
+            min-width: fit-content;
+            
+}
+@media (max-width:600px) {
+    .idbooked .identity input {
+            
+            font-size: 18px;
+           
+    
+        }
+}
+@media (max-width:400px) {
+    .idbooked .identity input {
+            
+            font-size: 15px;
+           
+    
+        }
+}
+@media (min-width:600px) and (max-width:768px) {
+    .idbooked .identity input {
+            
+            margin-bottom: 10px;
+           
+    
+        }
+}
+@media  (max-width:490px) {
+    .idbooked .identity input {
+            
+            margin-bottom: 10px;
+           
+    
+        }
+}
+.idbooked .identity input:hover , .idbooked .identity input:focus {
+ outline: none;
+ border: none;
+
+}
+.idbooked button {
+    width: fit-content;
+    outline: none;
+        border: none;
+    padding: 5px;
+    color: #fff;
+    background-color: green;
+    font-size: 18px;
+    margin-right: 10px;
+}

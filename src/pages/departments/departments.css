@@ -1,0 +1,38 @@
+.departments{
+    margin-top: 90px;
+}
+
+.departments .dep.even{
+    background-color: rgb(202, 169, 240);
+    cursor: pointer;
+    position: relative;
+    
+}
+.departments .dep.odd{
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+
+   
+}
+
+.departments .dep.odd.active::before , .departments .dep.even.active.active::before{
+    content: '>';
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+font-weight: bold;
+font-size: 19px;
+color: red;
+}
+
+/* .departments .continer{
+    padding-left: 150px;
+    padding-right: 150px;
+} */
+
+.def{
+    line-height: 1.8;
+    width: 95%;
+}

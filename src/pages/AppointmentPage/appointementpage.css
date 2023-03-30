@@ -1,0 +1,33 @@
+.appointform{
+    background-color: rgb(52, 43, 226);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+        padding: 54px 0 !important;
+       
+
+}
+.appoint-image-parent{
+    border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+}
+.appoint-image-parent img{
+    border-radius:inherit;
+}
+
+@media (max-width:786px) {
+    .appoint-image-parent {
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+        }
+                .appointform {
+                   
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0;
+        
+        
+                }
+    
+}

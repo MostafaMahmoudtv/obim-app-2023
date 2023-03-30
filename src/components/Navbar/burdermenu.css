@@ -1,0 +1,124 @@
+.burgermenu{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.777);
+    z-index: 3;
+}
+    .burger-navbar-list {
+            display: flex !important;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 600px;
+            background-color: white;
+            z-index: 10;
+            align-items: center !important;
+            justify-content: space-evenly !important;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid black;
+        }
+
+.burger-navbar-list li{
+    padding: 20px;
+}
+
+.burger-navbar-list .x-icon{
+    align-self: flex-start;
+    font-size: 20px;
+    
+}
+
+.burger-patiens-guests-menu {
+    border-radius: 5px;
+    flex-direction: column;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 130%;
+    transform: translateX(-50%);
+    z-index: 40;
+    display: flex;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: all 0.3s;
+}
+.burger-patiens-guests-menu.star {
+    border-radius: 5px;
+    flex-direction: column;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: -80px;
+    width: 130%;
+    transform: translateX(-50%);
+    z-index: 40;
+    display: flex;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: all 0.3s;
+}
+
+
+
+
+.burger-patiens-guests-menu a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+.burger-patiens-guests-menu p {
+    text-align: center;
+    color: black;
+    transition: all 0.3s;
+}
+
+.burger-patiens-guests-menu p:hover {
+    background-color: #ccc;
+
+}
+
+
+li.position-relative:hover .burger-patiens-guests-menu {
+  display: flex;
+
+}
+
+@media (max-width:445px) {
+    
+.burger-navbar-list{
+width: 80%;
+
+
+}
+.burger-patiens-guests-menu {
+    
+    left: 55px;
+        top: 50px;
+   
+}
+
+.burger-patiens-guests-menu.star {
+   
+left: 35px;
+    top: 45px;
+    
+}
+
+}
+
+
+.available-dep{
+    color: black !important;
+}
+.available-dep:hover{
+    color: blue !important;
+}

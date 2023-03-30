@@ -1,0 +1,23 @@
+.time-content{
+    box-shadow: 0px 1px 4px 0px #d87474;
+    max-width: 80%;
+    width: 80%;
+}
+.title img{
+max-width: 245px;
+    min-height: 121px;
+    min-width: 50px;
+
+}
+.title p{
+color: blueviolet;
+}
+
+.greetings{
+    font-size: 20px;
+    word-spacing: 2px;
+    color: rgb(52 25 77);
+}
+strong{
+    font-size: 20px;
+}

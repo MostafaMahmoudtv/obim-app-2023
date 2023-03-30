@@ -1,0 +1,10 @@
+.footer{
+    background-color: rgb(3, 3, 85);
+    color: white;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.footer .logo img {
+    width: 200px;
+}

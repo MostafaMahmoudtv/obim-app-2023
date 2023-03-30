@@ -1,0 +1,19 @@
+.leaflet-container{
+    height: 100% !important;
+    width: 100%;
+}
+
+.leaflet-routing-container-hide .leaflet-routing-collapse-btn{
+    background-image: url('../../Assets/route-solid.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    left: 0 !important;
+    top: 0 !important;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.leaflet-routing-collapse-btn{
+    right: 2px !important;
+}
