@@ -29,7 +29,6 @@ import ActionProvider from './components/ActionProvider/ActionProvider';
 import config from './components/config/config';
 import {AiFillMessage} from 'react-icons/ai'
 import {IoIosArrowDropdownCircle} from 'react-icons/io'
-import Fade from "react-reveal/Fade";
 import MapComponent from './pages/MapTest/MapTest';
 
 
@@ -96,7 +95,7 @@ const username = `اهلا (${saveuser}) في المحادثة`
 <AiFillMessage color='green'  onClick={() =>   handlebotopen()   }  />
 }
 {chatbot &&
-<Fade big>
+
 <div className='chatbot-content'>
 <IoIosArrowDropdownCircle  color='green' onClick={() => handlebotclose()} />
 
@@ -108,7 +107,7 @@ const username = `اهلا (${saveuser}) في المحادثة`
        placeholderText='اكتب أي كلمة مثال : أهلا'
        />
        </div>
-       </Fade>
+       
 }
        </div>
       </BrowserRouter>
