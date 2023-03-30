@@ -159,7 +159,7 @@ font-size: 13px;
     margin: 0;
 }
 
- textarea {
+ textarea  {
     background-image: url('../../Assets/obim-removebg-preview-small.png');
     background-repeat: no-repeat;
     background-size: 130px;
@@ -178,6 +178,44 @@ font-size: 13px;
     caret-color: #4671ea;
     border: none;
   }
+
+  .saved-textarea{
+    width: 100%;
+    min-height: 300px;
+    resize: none;
+    height: 59px;
+    outline: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 15px;
+    max-height: 330px;
+    caret-color: #4671ea;
+    border: none;
+    position: relative;
+    white-space: pre-line;
+  }
+
+  .saved-textarea::before{
+    content: '';
+    position: absolute;
+    width: 130px;
+    background-image: url('../../Assets/obim-removebg-preview-small.png');
+    background-repeat: no-repeat;
+    background-size: 130px;
+    background-blend-mode: hard-light;
+    background-position: center;
+    height: 100px;
+  top: 50%;
+  opacity: 0.3;
+  left: 50%;
+  transform: translate(-50%);
+  }
+
+
+
+
+
   textarea::placeholder {
     color: #b3b3b3;
   
@@ -194,7 +232,8 @@ font-size: 13px;
   
 
 
-.doctor-patient-date{
+
+.patient-id{
     padding-bottom: 20px;
 border-bottom: 4px solid blue;
 }
@@ -205,3 +244,81 @@ border-bottom: 4px solid blue;
     color: #fff;
     font-size: 14px;
 }
+
+
+.doctorid{
+    border: none;
+    font-size: 13px;
+    position: relative;
+    border-bottom: 1px dashed black;
+    margin-left: 10px;
+    max-width: 95px;
+}
+
+.doctorid:focus{
+    outline: none;
+}
+
+
+.gray{
+    color: #b9b2b2;
+    font-weight: bold;
+}
+
+
+.saved-pres-background{
+    /* background-color: rgba(0, 0, 0, 0.522); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px !important;
+    background-image: url('../../Assets/doctor-nurses-special-equipment.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: 5px;
+    position: relative;
+    z-index: 0;
+}
+
+
+.saved-pres-background::before{
+    position: absolute;
+    width: 100%;
+    content: '';
+    height: 100%;
+    background-color: rgb(0 0 0 / 64%);
+    z-index: -1;
+}
+
+.form-saved{
+    width: 500px;
+    background-color: #fff;
+   min-height: 500px;
+}
+
+/* .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+  } */
+
+
+
+
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    width: 400px !important;
+    /* margin-left: 80px !important; */
+text-align:right;
+  
+  }

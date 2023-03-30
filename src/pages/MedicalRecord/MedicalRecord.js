@@ -7,8 +7,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import obimimage from '../../Assets/obim-removebg-preview-small.png'
 import {IoLocationSharp} from 'react-icons/io5'
 import {AiOutlinePhone} from 'react-icons/ai'
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import "./styles.css";
+
+// import required modules
+import { Pagination, Navigation } from "swiper";
+
+
+
+
+
+
+
+
+
+
+
+
 
 const MedicalRecord = () => {
+  const [swiperRef, setSwiperRef] = useState(null);
+
   const context = useContext(Context)
     const {LogIn,usersArray,setusersArray,showUserBooked, saveuser , setshowUserBooked} = context
 const [egyidConfirm, setegyidConfirm] = useState('')
@@ -20,7 +44,7 @@ const [filteredEgyId, setfilteredEgyId] = useState([])
 const [filteredEgyId2, setfilteredEgyId2] = useState([])
 const [prescription, setprescription] = useState('')
 const [previousPrescription, setprevoiusPrescription] = useState('')
-const [createPrescription, setcreatePrescription] = useState({ medicine:'' , medicinePrescription:'', date:'' , id:''})
+const [createPrescription, setcreatePrescription] = useState({ docotorID:'' , medicinePrescription:'', date:'' , id:''})
 const [search, setsearch] = useState('')
 const [notfound, setnotfound] = useState([])
 
@@ -268,19 +292,32 @@ let userbookedarraynew2 = (usersArray.myPrescription).filter((element,index) => 
 
    <img style={{width:'30%'}} src={obimimage} alt='obim' />
       </div>
-   <div className='doctor-patient-date d-flex align-items-center w-100 justify-content-between mt-5'>
+   <div className='doctor-patient-date d-flex align-items-center w-100 border-none justify-content-between mt-5'>
 <div className='doctor-patient'>
-  <span>الدكتور: </span>
-<span className='ms-5'>..................</span>
-  <span>المريض:</span>
-<span>{saveuser} </span>
+  <span className='gray'>ID الدكتور: </span>
+<input autoFocus type='text' required className='doctorid' value={createPrescription.docotorID} onChange={(e) => setcreatePrescription({...createPrescription , docotorID:e.target.value})} />
+  
 </div>
 <div className='pres-date'>
 
-<span>التاريخ:</span>
+<span className='gray'>التاريخ:</span>
 
 
 <span>{createPrescription.date}</span>
+
+
+</div>
+   </div>
+   <div className='patient-id d-flex align-items-center w-100 justify-content-between mt-2'>
+<div className='doctor-patient'>
+<span className='gray'>اسم المريض: </span>
+<span>{saveuser} </span>
+
+</div>
+<div className='pres-date'>
+
+<span className='me-3 gray'>ID المريض :  </span>
+<span dir='ltr'>{createPrescription.id} </span>
 
 
 </div>
@@ -313,7 +350,7 @@ let userbookedarraynew2 = (usersArray.myPrescription).filter((element,index) => 
       </div>
       <div>
 <AiOutlinePhone/>
-<span> +0200106547838</span>
+<span className='me-1' dir='ltr'> +0200106547838</span>
 
       </div>
     </div>
@@ -405,11 +442,146 @@ let userbookedarraynew2 = (usersArray.myPrescription).filter((element,index) => 
 </div>
 }
 {egyidConfirmed &&
-<div className='doc-table mt-3 table-responsive'>
+<div className='doc-table mt-3 table-responsive d-flex flex-column align-items-center'>
      <h1 className={filteredEgyId2.length ? "d-none" : "d-block"}>   لا توجد روشتة </h1>  
     <h1 className={filteredEgyId2.length ? "d-block" : "d-none"}>  روشتة المريض  </h1>
     <input type='search' placeholder='ابحث عن اسم الدواء...' className='search-medicine my-2 ' value={search} onChange={(e) => setsearch(e.target.value) } />
-<table  className={filteredEgyId2.length ? "table" : "d-none"}>
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div className='saved-pres-background w-100'> */}
+
+  <Swiper
+   onSwiper={setSwiperRef}
+   slidesPerView={3}
+   centeredSlides={true}
+   spaceBetween={30}
+   pagination={{
+     type: "fraction",
+   }}
+   navigation={true}
+   modules={[Pagination, Navigation]}
+  className="mySwiper saved-pres-background w-100"
+>
+  {filteredEgyId2.map((element , id) =>  (
+        <SwiperSlide>
+
+
+    <div className='prescription-form form-saved'  key={id}> 
+    <div className='prescriptionimage-date d-flex flex-column align-items-center '>
+      <div className='d-flex w-100 align-items-center justify-content-between pres-head'>
+     
+<h1 className='m-0 '>عيادة</h1>
+
+   <img style={{width:'30%'}} src={obimimage} alt='obim' />
+      </div>
+   <div className='doctor-patient-date d-flex align-items-center w-100 border-none justify-content-between mt-5'>
+<div className='doctor-patient'>
+
+
+
+
+
+  <span className='gray'>ID الدكتور: </span>
+
+
+
+{/* <input autoFocus type='text' required className='doctorid' value={createPrescription.docotorID} onChange={(e) => setcreatePrescription({...createPrescription , docotorID:e.target.value})} /> */}
+<span >{element.docotorID} </span>
+  
+</div>
+<div className='pres-date'>
+
+<span className='gray'>التاريخ:</span>
+
+
+<span>{createPrescription.date}</span>
+
+
+</div>
+   </div>
+   <div className='patient-id d-flex align-items-center w-100 justify-content-between mt-2'>
+<div className='doctor-patient'>
+<span className='gray'>اسم المريض: </span>
+<span>{saveuser} </span>
+
+</div>
+<div className='pres-date'>
+
+<span className='me-3 gray'>ID المريض :  </span>
+<span dir='ltr'>{createPrescription.id} </span>
+
+
+</div>
+   </div>
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+    <p className='saved-textarea'>
+
+{element.medicinePrescription}
+
+
+    </p>
+
+<button type='button'>
+
+</button>
+
+    
+    <div className='pres-footer'>
+      <div>
+<IoLocationSharp className='ms-1'/>
+<span>الفيوم - العامرية - خلف السيتي سنتر </span>
+
+      </div>
+      <div>
+<AiOutlinePhone/>
+<span className='me-1' dir='ltr'> +0200106547838</span>
+
+      </div>
+    </div>
+     </div>
+     </SwiperSlide>
+
+  ))}
+  </Swiper>
+
+{/* </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <table  className={filteredEgyId2.length ? "table" : "d-none"}>
   <thead>
     <tr className='doc'>
       <th scope="col">#</th>
@@ -433,7 +605,11 @@ let userbookedarraynew2 = (usersArray.myPrescription).filter((element,index) => 
    
      ))}
   </tbody>
-</table>
+</table> */}
+
+
+
+
 </div>
 }
 
