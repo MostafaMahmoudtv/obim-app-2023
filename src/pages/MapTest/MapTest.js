@@ -77,11 +77,11 @@ const MapComponent = () => {
     
   //      useScript('https://cdn.lordicon.com/fudrjiwc.js')
 
-      //  const Desticon = new Icon({
-      //   iconSize: [50, 50],
-      //   iconUrl: require("../../Assets/18-location-pin-lineal.gif"),
+       const Desticon = new Icon({
+        iconSize: [50, 50],
+        iconUrl: require("../../Assets/18-location-pin-lineal.gif"),
 
-      //  })
+       })
        const myLocation = new Icon({
         iconSize: [50, 50],
         iconUrl: require("../../Assets/icons8-map-pin-48.png"),
@@ -90,16 +90,56 @@ const MapComponent = () => {
       
        
 
-  if (!coord) return null;
+  if (!coord) return (
+
+<div className="row m-0 mt-5" >
+<div className="col-lg-6 col-md-12 col-sm-12">
+<h1 style={{color:"blue"}}>اسرع طريق للوصول لعيادة OBIM</h1>
+<div className="d-flex align-items-center my-5">
+<IoLocationSharp size={40} className='ms-3'/>
+<h3>الفيوم - العامرية - خلف السيتي سنتر </h3>
+  </div>
+<div className="d-flex align-items-center my-5">
+<AiOutlinePhone size={40} className='ms-3'/>
+<h3>+02001245939</h3>
+  </div>
+<div className="d-flex align-items-center my-5">
+<Ri24HoursFill size={40} className='ms-3'/>
+<h3>نعمل على مدار الساعة لخدمتكم</h3>
+  </div>
+<h2 className="red">** اسمح للمتصفح للوصول لموقعك لتجربة أفضل **</h2>
+</div>
 
 
-  let DefaultIcon = L.icon({
-    iconUrl: require("../../Assets/icons8-map-pin-48.png"),
-    iconSize: [25, 41],
-    iconAnchor: [10, 41],
-    popupAnchor: [2, -40],
-  });
-  // L.Marker.prototype.options.icon = null;
+
+
+
+<div className="col-lg-6 col-md-12 col-sm-12">
+
+
+<MapContainer center={[29.2999988 , 30.83333]}
+      zoom={zoom}
+      style={{ height: "100vh" }}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+          <Marker position={[29.2999988 , 30.83333]} icon={Desticon}>
+        <Popup>
+انت هنا        </Popup>
+      </Marker>
+      <LeafletGeocoder />
+      
+      </MapContainer>
+
+</div>
+
+
+</div>
+  );
+
+
+  
 
 
 

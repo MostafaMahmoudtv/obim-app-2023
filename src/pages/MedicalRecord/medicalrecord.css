@@ -322,3 +322,20 @@ border-bottom: 4px solid blue;
 text-align:right;
   
   }
+
+
+  .delete-savedpres{
+
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+    color: #fff;
+    background-color: red;
+    padding: 5px;
+    font-size: 13px;
+    border: none;
+    
+    border-radius: 5px;
+
+
+  }

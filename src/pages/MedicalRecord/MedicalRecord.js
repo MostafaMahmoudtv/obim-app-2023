@@ -106,7 +106,6 @@ const handlesubmitbutton = ()=>{
     
 }
 
-let savedUserDetails = localStorage.getItem('UsersDetails')
 
 useEffect(() => {
   
@@ -127,26 +126,7 @@ setfilteredEgyId2(notfound)
 
 
 
-//     useEffect(() => {
 
-// if(filteredEgyId2.length > 0 ){
-
-//   if(savedUserDetails){
-//     setusersArray(JSON.parse(savedUserDetails))
-//   }
-// }
-
-  
-
-
-  
-
-      
-    
-  
- 
-         
-//     },[filteredEgyId2])
 
 
 
@@ -221,7 +201,7 @@ setusersArray({...usersArray,myPrescription:newprescription })
 
 
 
-setcreatePrescription({...createPrescription, medicine:"" , medicinePrescription:'', date:''})
+setcreatePrescription({...createPrescription, docotorID:"" , medicinePrescription:'', date:''})
 
 document.querySelector(".black").style.display="none"
 
@@ -542,8 +522,8 @@ let userbookedarraynew2 = (usersArray.myPrescription).filter((element,index) => 
 
     </p>
 
-<button type='button'>
-
+<button type='button' onClick={()=> removeFromList(element.num)} className='delete-savedpres'>
+مسح
 </button>
 
     
