@@ -8,6 +8,7 @@ import { AuthProvider } from './context/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import { Provider } from "react-redux";
 import { store } from "./pages/MapTest/store";
+import { HMSRoomProvider } from '@100mslive/react-sdk';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,8 +18,11 @@ root.render(
     <StateContext>
       <AuthProvider>
               <Toaster />
+
               <Provider store={store}>
+              <HMSRoomProvider>
     <App />
+              </HMSRoomProvider>
     </Provider>
     </AuthProvider>
     </StateContext>

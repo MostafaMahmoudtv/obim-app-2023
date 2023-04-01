@@ -5,14 +5,16 @@ const AdminPage = () => {
 const context = useContext(Context)
 const {bookedToday,setbookedToday} = context
 
-let adminLocal = localStorage.getItem('UsersDetails')
+let adminLocal =  localStorage.getItem('UsersDetails')
 
 
    
       
 
 useEffect(() => {
-    if(adminLocal){
+  console.log(JSON.parse(adminLocal).bookedAppointements)
+
+    if((JSON.parse(adminLocal).bookedAppointements).length >= 1){
          var dtToday = new Date();
     
     var month = dtToday.getMonth() + 1;
@@ -25,15 +27,16 @@ useEffect(() => {
     
     var maxDate = year + '-' + month + '-' + day;
 
-        
 let userbookedarray3 = (JSON.parse(adminLocal).bookedAppointements).filter(element => {
+console.log(element.date)
+console.log(maxDate , " max")
 
  return element.date === maxDate
 
 
 
 })
-
+console.log(userbookedarray3)
     setbookedToday(userbookedarray3)
 }
     

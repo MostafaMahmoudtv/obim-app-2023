@@ -1,0 +1,35 @@
+.qr-popup{
+background-color: #fff;
+position: fixed;
+width: 580px;
+height: 530px;
+top: 23%;
+left: 50%;
+transform: translate(-50%);
+z-index: 999999;
+border-radius: 15px;
+border: 1px solid #ddd;
+max-width: 100%;
+box-shadow: 0 0 18px 0px;
+}
+
+.qr-popup svg{
+
+cursor: pointer;
+
+
+
+}
+
+
+@media (max-width:440px) {
+    .qrcanva{
+        max-width: 270px !important;
+        max-height: 300px !important;
+    }
+
+
+    .qr-popup h4{
+        font-size: 16px;
+    }
+}

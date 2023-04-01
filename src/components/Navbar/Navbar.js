@@ -111,6 +111,7 @@ const Navbar = () => {
   const logout = () => {
     setSuccess(false);
     setLogIn(false);
+    setSaveUser('')
   };
 
   return (

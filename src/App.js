@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 
 import Register from './components/Register/Register';
-import React,{useContext  , useState} from 'react'
+import React,{useContext  ,useEffect, useState} from 'react'
 import { Context } from './context/ContextState';
 import HeroSlider from './components/HeroSlider/HeroSlider';
 import Options from './components/Options/Options';
@@ -30,6 +30,10 @@ import config from './components/config/config';
 import {AiFillMessage} from 'react-icons/ai'
 import {IoIosArrowDropdownCircle} from 'react-icons/io'
 import MapComponent from './pages/MapTest/MapTest';
+import MeetingIcon from './components/MeetingIcon/MeetingIcon';
+import MeetingPage from './pages/MeetingPage/MeetingPage';
+import QRCode from './components/QRCode/QRCode';
+import QRCodePopup from './QRCodePopup';
 
 
 
@@ -37,10 +41,10 @@ import MapComponent from './pages/MapTest/MapTest';
 
 function App() {
   const context = useContext(Context)
-  const {user,setuser,password,setpassword,userValidation,setuserValidation ,LogIn,saveuser, showNewReg ,  setshowNewReg , showburgermenu, setshowburgermenu} = context
+  const {user,setuser,password,setpassword,userValidation,setuserValidation ,usersArray,LogIn,saveuser, showNewReg ,  setshowNewReg , showburgermenu, setshowburgermenu} = context
 const [chatbot, setchatbot] = useState(false)
 const [closechatbot, setclosechatbot] = useState(false)
-
+const [qrcodechecker, setqrcodechecker] = useState('')
 
 
 
@@ -65,6 +69,31 @@ setclosechatbot(false)
 
 const username = `اهلا (${saveuser}) في المحادثة`
 
+useEffect(() => {
+
+  let userbookedarray3 = (usersArray.bookedAppointements).filter(element => {
+    console.log(element.name)
+    console.log(saveuser)
+    
+     return element.name === saveuser
+    
+    
+    
+    })
+console.log(userbookedarray3)
+    setqrcodechecker(userbookedarray3)
+
+
+
+
+}, [usersArray , LogIn ])
+
+
+
+
+const [handleQr, sethandleQr] = useState(false)
+
+
 
   return ( 
     <div className="App">
@@ -72,6 +101,9 @@ const username = `اهلا (${saveuser}) في المحادثة`
       <BrowserRouter>
 { showburgermenu ? <BurgerMenu/> :'' }
 {showNewReg ? <Register/> : '' }
+{saveuser ?  <MeetingIcon  active={"active-meeting-icon"}  /> :  <MeetingIcon  active={"meeting-icon"}  /> }
+{saveuser && qrcodechecker.length >= 1 ?  <QRCode  sethandleQr={sethandleQr}  active={"active-qr-icon"}  /> :  <QRCode  active={"qr-icon"}  /> }
+   { handleQr &&  <QRCodePopup sethandleQr={sethandleQr} />}
       <Navbar/>
       
       <Routes>
@@ -87,6 +119,7 @@ const username = `اهلا (${saveuser}) في المحادثة`
       <Route path="/إجازة-الأطباء" element={<DoctorsVacation/>}></Route>
       <Route path="/التخصصات-المتاحة" element={<Departments/>}></Route>
       <Route path="/map" element={<MapComponent/>}   ></Route>
+      <Route path="/meeting" element={<MeetingPage/>}   ></Route>
 
       </Routes>
 <Footer/>
