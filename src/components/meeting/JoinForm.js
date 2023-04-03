@@ -55,6 +55,11 @@ function Join() {
 
   return (
     <>
+    <div className="text-center mt-4">
+
+    <span className={`ms-4 p-3 rounded border ${sentEmail ? 'border-5' : 'border-0'} ` } onClick={() => setsentEmail(true)}>ليس لدي موعد مسبق</span>
+    <span className={`ms-4 p-3 rounded border ${!sentEmail ? 'border-5' : 'border-0'} ` } onClick={() => setsentEmail(false)}> لدي موعد مسبق</span>
+    </div>
       {sentEmail ? (
         <form className="meeting" ref={form} onSubmit={sendEmail}>
           <p style={{ color: "white" }}>
@@ -66,7 +71,11 @@ function Join() {
             <input type="text" name="user_name" />
             <label>البريد الإلكتروني</label>
             <input type="email" name="user_email" />
-            
+            <label className="mt-3">اختيار الطبيب:  </label>
+            <select className="d-block w-100 mt-4" name="user_select">
+              <option value='طبيب نفسي'>طبيب نفسي</option>
+              <option value='طبيب استشاري'>طبيب استشاري</option>
+            </select>
             <input className="btn-primary mt-3" type="submit" value="إرسال" />
           </div>
         </form>
